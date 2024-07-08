@@ -15,13 +15,7 @@ public class Points {
 
     public String getRowString(int row) {
         StringBuilder rowString = new StringBuilder();
-
-        if(row % 2 ==0) {
-            if(row < 10) rowString.append(SPACE).append(row);
-            else rowString.append(row);
-        }
-        else rowString.append(DOUBLE_SPACE);
-
+        rowString.append(getRowNumberString(row));
         rowString.append(BAR);
 
         for(int col = 1; col <= 24; col++) {
@@ -29,6 +23,14 @@ public class Points {
         }
 
         return rowString.toString();
+    }
+
+    private String getRowNumberString(int row) {
+        if(row % 2 == 0) {
+            if(row < 10) return SPACE + row;
+            return String.valueOf(row);
+        }
+        return DOUBLE_SPACE;
     }
 
     private String getPointsString(int row, int col) {
@@ -57,9 +59,9 @@ public class Points {
     public double getDistance() {
         int x1 = points.get(0).getX();
         int y1 = points.get(0).getY();
-
         int x2 = points.get(1).getX();
         int y2 = points.get(1).getY();
+
         return Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
     }
 
