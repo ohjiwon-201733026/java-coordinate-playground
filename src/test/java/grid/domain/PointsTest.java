@@ -67,13 +67,13 @@ public class PointsTest {
     @DisplayName("두 점 사이 거리 구하기")
     public void getDistance() {
         Points points = new Points(Arrays.asList(new Point(10, 10), new Point(5,5)));
-        assertEquals(7.0710678118654755, points.getDistance());
+        assertEquals(7.0710678118654755, points.getArea());
     }
 
     @Test
     @DisplayName("직선여부")
     public void isStraightLine() {
         Points points = new Points(Arrays.asList(new Point(10, 10)));
-        assertEquals(false, points.isStraightLine());
+        assertEquals(false, points.isFigure());
     }
 }

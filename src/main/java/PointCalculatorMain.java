@@ -15,8 +15,8 @@ public class PointCalculatorMain {
         }
 
         System.out.println(points.drawGrid());
-        if(points.isStraightLine()) {
-            System.out.println("두 점 사이 거리는 " + points.getDistance());
+        if(points.isFigure()) {
+            System.out.println("두 점 사이 거리는 " + points.getArea());
         }
     }
 
