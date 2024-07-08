@@ -5,7 +5,6 @@ import java.util.List;
 public class Points {
     private static final String BAR = "|";
     private static final String DOUBLE_SPACE = "  ";
-    private static final String SPACE = " ";
 
     private List<Point> points;
 
@@ -27,8 +26,7 @@ public class Points {
 
     private String getRowNumberString(int row) {
         if(row % 2 == 0) {
-            if(row < 10) return SPACE + row;
-            return String.valueOf(row);
+            return String.format("%2s", row);
         }
         return DOUBLE_SPACE;
     }
