@@ -53,4 +53,17 @@ public class Points {
         return result.toString();
     }
 
+
+    public double getDistance() {
+        int x1 = points.get(0).getX();
+        int y1 = points.get(0).getY();
+
+        int x2 = points.get(1).getX();
+        int y2 = points.get(1).getY();
+        return Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+    }
+
+    public boolean isStraightLine() {
+        return points.size() == 2;
+    }
 }

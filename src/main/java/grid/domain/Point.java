@@ -3,7 +3,6 @@ package grid.domain;
 public class Point {
 
     private static final String SPACE = " ";
-    private static final String BAR = "|";
     private static final String STAR = "*";
 
     private int x;
@@ -24,5 +23,13 @@ public class Point {
 
     boolean isMatch(int row, int col) {
         return x == row && y == col;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }
