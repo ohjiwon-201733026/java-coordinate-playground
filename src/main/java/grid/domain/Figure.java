@@ -20,7 +20,6 @@ public abstract class Figure {
         return result.toString();
     }
 
-
     public String getRowString(int row) {
         StringBuilder rowString = new StringBuilder();
         rowString.append(getRowNumberString(row));
