@@ -4,14 +4,11 @@ import view.InputView;
 public class PointCalculatorMain {
 
     public static void main(String[] args) {
-        boolean flag = true;
         Points points = null;
-
-        while(flag) {
+        while(true) {
             try {
                 points = InputView.inputPoints();
             } catch (IllegalArgumentException iae) {
-                flag = true;
                 continue;
             }
             break;

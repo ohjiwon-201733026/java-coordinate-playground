@@ -4,6 +4,7 @@ import grid.domain.Point;
 import grid.domain.Points;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,14 +17,16 @@ public class InputView {
 
         List<Point> pointsList = new ArrayList<>();
         String [] pointsStr = input.split("~");
-        for (String pointStr : pointsStr) {
-            String tmp = pointStr.replace("(", "");
-            tmp = tmp.replace(")", "");
 
-            String [] points = tmp.split(",");
-            pointsList.add(new Point(Integer.parseInt(points[0]), Integer.parseInt(points[1])));
-        }
-
+        Arrays.stream(pointsStr).forEach(point -> pointsList.add(makePoint(point)));
         return new Points(pointsList);
+    }
+
+    private static Point makePoint(String pointStr) {
+        String tmp = pointStr.replace("(", "");
+        tmp = tmp.replace(")", "");
+
+        String [] points = tmp.split(",");
+        return new Point(Integer.parseInt(points[0]), Integer.parseInt(points[1]));
     }
 }

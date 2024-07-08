@@ -45,16 +45,14 @@ public class Points {
     public String drawGrid() {
         StringBuilder result = new StringBuilder();
 
-        for(int row = 24; row >=1; row--) {
+        for(int row = 24; row >= 1; row--) {
             result.append(getRowString(row));
             result.append("\n");
         }
 
         result.append("  +------------------------");
-
         return result.toString();
     }
-
 
     public double getDistance() {
         int x1 = points.get(0).getX();
