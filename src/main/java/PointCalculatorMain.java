@@ -1,10 +1,11 @@
+import grid.domain.Figure;
 import grid.domain.Points;
 import view.InputView;
 
 public class PointCalculatorMain {
 
     public static void main(String[] args) {
-        Points points = null;
+        Figure points = null;
         while(true) {
             try {
                 points = InputView.inputPoints();
