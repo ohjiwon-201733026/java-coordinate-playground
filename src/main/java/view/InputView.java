@@ -1,9 +1,6 @@
 package view;
 
-import grid.domain.Figure;
-import grid.domain.Point;
-import grid.domain.Points;
-import grid.domain.Rectangle;
+import grid.domain.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,6 +19,9 @@ public class InputView {
 
         Arrays.stream(pointsStr).forEach(point -> pointsList.add(makePoint(point)));
 
+        if(pointsList.size() == 3) {
+            return new Triangle(pointsList);
+        }
         if(pointsList.size() == 4) {
             return new Rectangle(pointsList);
         }
