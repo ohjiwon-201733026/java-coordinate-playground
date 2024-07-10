@@ -31,4 +31,13 @@ public class RectangleTest {
         assertThrows(IllegalArgumentException.class, () -> new Rectangle(Arrays.asList(new Point(4, 3)
                 , new Point(1,1), new Point(2,3))));
     }
+
+    @Test
+    @DisplayName("직사각형 면적 구하기")
+    public void getArea() {
+        Rectangle rectangle = new Rectangle(Arrays.asList(new Point(4, 3)
+                , new Point(4,1), new Point(2,3), new Point(2,1)));
+
+        assertEquals(rectangle.getArea(), 4);
+    }
 }
